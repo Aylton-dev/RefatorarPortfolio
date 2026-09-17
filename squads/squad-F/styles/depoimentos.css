@@ -1,14 +1,181 @@
-﻿* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.6; color: #1f2937; }
-img, svg { display: block; max-width: 100%; height: auto; }
-a { color: inherit; text-decoration: none; }
-button, input, textarea, select { font: inherit; }
-:focus-visible { outline: 2px solid #0f766e; outline-offset: 2px; }
-/* Estilos base - personalize para seu squad */
+﻿:root {
+  --primary: #276ef1;
+  --primary-dark: #1d4fc0;
+  --bg: #f7faff;
+  --panel: #ffffff;
+  --text: #4a5568;
+  --heading: #1e293b;
+  --muted: #6b7a8c;
+  --border: #e2e8f0;
+  --shadow: rgba(39, 110, 241, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
 
 body {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont,
-               'Segoe UI', sans-serif;
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+.site-header {
+  background: linear-gradient(135deg, #ffffff 0%, #f3f7ff 100%);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.site-header:hover {
+  box-shadow: 0 6px 25px var(--shadow);
+}
+
+.logo a {
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: flex-end;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #5f6e80;
+  padding: 0.55rem 1.1rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  border-radius: 25px;
+  transition: 0.25s ease;
+}
+
+.main-nav a:hover {
+  background: #e8f0ff;
+  color: var(--primary);
+  transform: translateY(-2px);
+}
+
+.main-nav a.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(39, 110, 241, 0.3);
+}
+
+main {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+}
+
+.section-depoimentos-intro {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-depoimentos-intro h1 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  font-weight: 800;
+}
+
+.section-depoimentos-intro p {
+  margin-top: 0.5rem;
+  color: var(--muted);
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.testimonials-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.testimonial-card {
+  background: var(--panel);
+  border: 1px solid #e4e7ec;
+  border-radius: 12px;
+  padding: 1.7rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04);
+  transition: 0.25s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 28px rgba(39, 110, 241, 0.15);
+  border-color: var(--primary);
+}
+
+.testimonial-header h2 {
+  color: var(--heading);
+  font-size: 1.2rem;
+  margin-bottom: 0.2rem;
+}
+
+.testimonial-role {
+  color: var(--primary);
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  color: #5c6b7a;
+  font-size: 0.98rem;
+  font-style: italic;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
 }
 

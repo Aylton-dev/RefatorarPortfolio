@@ -1,4 +1,16 @@
-﻿* {
+﻿:root {
+  --primary: #276ef1;
+  --primary-dark: #1d4fc0;
+  --bg: #f7faff;
+  --panel: #ffffff;
+  --text: #4a5568;
+  --heading: #1e293b;
+  --muted: #6b7a8c;
+  --border: #e2e8f0;
+  --shadow: rgba(39, 110, 241, 0.15);
+}
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -12,11 +24,12 @@ body {
   margin: 0;
   font-family: "Segoe UI", Arial, sans-serif;
   line-height: 1.6;
-  color: #1f2937;
-  background: #f5f8ff;
+  color: var(--text);
+  background: var(--bg);
 }
 
-img, svg {
+img,
+svg {
   display: block;
   max-width: 100%;
   height: auto;
@@ -27,12 +40,15 @@ a {
   text-decoration: none;
 }
 
-button, input, textarea, select {
+button,
+input,
+textarea,
+select {
   font: inherit;
 }
 
 :focus-visible {
-  outline: 2px solid #276ef1;
+  outline: 2px solid var(--primary);
   outline-offset: 2px;
 }
 
@@ -42,21 +58,22 @@ button, input, textarea, select {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--border);
   box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
   position: sticky;
   top: 0;
   z-index: 10;
 }
 
-.logo h1 {
-  font-size: 1.5rem;
-  color: #276ef1;
-  font-weight: 800;
+.site-header:hover {
+  box-shadow: 0 6px 25px var(--shadow);
 }
 
 .logo a {
-  display: none;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 1.5rem;
+  font-weight: 800;
 }
 
 .main-nav ul {
@@ -77,11 +94,16 @@ button, input, textarea, select {
   transition: 0.25s ease;
 }
 
-.main-nav a:hover,
-.main-nav a.active {
+.main-nav a:hover {
   background: #e8f0ff;
-  color: #276ef1;
+  color: var(--primary);
   transform: translateY(-2px);
+}
+
+.main-nav a.active {
+  background: var(--primary);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(39, 110, 241, 0.3);
 }
 
 main {
@@ -95,15 +117,15 @@ main {
   margin-bottom: 3rem;
 }
 
-.section-habilidades-intro h2 {
+.section-habilidades-intro h1 {
   font-size: 2.2rem;
-  color: #276ef1;
+  color: var(--primary);
   font-weight: 800;
 }
 
 .section-habilidades-intro p {
   margin-top: 0.5rem;
-  color: #6b7a8c;
+  color: var(--muted);
   max-width: 600px;
   margin-left: auto;
   margin-right: auto;
@@ -116,7 +138,7 @@ main {
 }
 
 .skill-card {
-  background: #fff;
+  background: var(--panel);
   border: 1px solid #e4e7ec;
   border-radius: 12px;
   padding: 1.7rem;
@@ -127,11 +149,11 @@ main {
 .skill-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 14px 28px rgba(39, 110, 241, 0.15);
-  border-color: #276ef1;
+  border-color: var(--primary);
 }
 
-.skill-card h3 {
-  color: #1e293b;
+.skill-card h2 {
+  color: var(--heading);
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
 }
@@ -145,5 +167,14 @@ main {
 .skill-desc {
   color: #5c6b7a;
   font-size: 0.95rem;
+}
+
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+  margin-top: 3rem;
 }
 
